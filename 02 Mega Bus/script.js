@@ -5,6 +5,10 @@ increaseButton.addEventListener('click',function(){
    const newInputValue= numberParsing+1;
    inputValue.value=newInputValue;
 })
+const decreaseButton= document.getElementById('first-class-decrease')
+decreaseButton.addEventListener('click',function(){
+    console.log("clicked");
+})
 
 
  
