@@ -17,7 +17,7 @@
 
 <body>
     <!--Header and Menu Section-->
-    <header class="container">
+    <header  id="header" class="container">
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
@@ -29,7 +29,7 @@
     </header>
 
     <!--Booking Section-->
-    <main class="main-content container">
+    <main  id="main" class="main-content container">
 
         <div class="booking-content">
             <h1>Mega City Bus</h1>
@@ -54,11 +54,11 @@
             <div class="inputs">
                 <div class="input-group">
                     <label" for="">Departure</label>
-                    <input class="inp-style" type="date" name="">
+                    <input  id="departure-date"class="inp-style" type="date" name="" value="2021-01-31>
                 </div>
                 <div class="input-group">
                     <label for="">Return</label>
-                    <input class="inp-style" type="date" name="">
+                    <input id="return-date" class="inp-style" type="date" name="">
                 </div>
             </div>
             <div class="inputs">
@@ -112,9 +112,30 @@
                     </div>
                 </div>
             </div>
-            <button class="btn-style">Book Now</button>
+            <button id="book-now" class="btn-style">Book Now</button>
         </div>
     </main>
+
+
+
+
+
+<section id="confirm-section">
+    <div>
+        <h1>Congratulation</h1>
+          <h4>You are Successfully Book  <span>Dhaka</span> to <span>Chittagong</span></h4>
+                 <h3>Details</h3>
+           <h3>Departure Date: <span id="departure">12/1222</span></h3>
+           <h3>Return Date: <span id=return>12/1222</span></h3>
+            <h3>First Class Seat's Book :<span id="first-class-seat">2</span> </h3>
+            <h3>Economy Class set's Bok  :<span' id="economy-class-set">2</span> </h3>
+            <h3>Subtotal: <span id="show-subtotal">$120</span> </h3>
+            <h3>Vat: <span id="show-vat">$120</span> </h3>
+            <h3>Total: <span id="show-total">$120</span> </h3>
+             <h4>Thank You  have a nice trip!!!</h4>
+    </div>
+</section>
+
 
     <!--Thank You-->
     <script src="script.js"></script>

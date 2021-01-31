@@ -5,13 +5,16 @@
 function grandTotal(subtotal,vat){
 const totalGrand=subtotal+vat;
 document.getElementById("grand-total").innerText="$"+totalGrand;
+ const showTotal=  document.getElementById("show-total");
+ showTotal.innerText="$"+totalGrand;;
 console.log(totalGrand);
 
 }
   function vatCount(subTotal){
        const vat=subTotal*.10;
        document.getElementById('vat-count').innerText="$"+vat;
-       console.log(vat);
+       const showVat=  document.getElementById("show-vat");
+       showVat.innerText="$"+vat;
        return vat;
   }
  function subTotal(whichCase,caseCount,newCaseCount){
@@ -29,6 +32,8 @@ console.log(totalGrand);
      const  subTotal= document.getElementById('sub-total');
      const  totalSubTotal=ecoCaseTotal+caseTotal
      subTotal.innerText='$'+totalSubTotal;
+     const showSubTotal=  document.getElementById("show-subtotal");
+     showSubTotal.innerText='$'+totalSubTotal;
     return totalSubTotal;
  }
 
@@ -43,12 +48,15 @@ console.log(totalGrand);
     caseNewCount= caseCount+1;
     caseInput.value=caseNewCount;
 
+
     }
     if(isIncrease==false){
      if(caseCount>0){
      caseNewCount= caseCount-1;
     caseInput.value=caseNewCount;
      }}
+    const firstClassSeat= document.getElementById("first-class-seat");
+    firstClassSeat.innerText= caseNewCount;
   const subTotalCost= subTotal(true,caseNewCount,ecoCaseNewCount)
   const vat =vatCount(subTotalCost);
   grandTotal(subTotalCost,vat);
@@ -70,11 +78,46 @@ console.log(totalGrand);
      caseNewCount= caseCount-1;
     caseInput.value=caseNewCount;
      }}
+     const economyClassSeat= document.getElementById("economy-class-set");
+    economyClassSeat.innerText= caseNewCount;
       const subTotalCost= subTotal(false,caseNewCount,firstCaseNewCount)
       const vat=vatCount(subTotalCost);
        grandTotal(subTotalCost,vat)
  
  }
+
+
+
+
+
+  document.getElementById('book-now').addEventListener('click',function(){
+      document.body.style.background="whitesmoke"; 
+     let confirmId= document.getElementById("confirm-section");
+    let mainId=document.getElementById('main');
+      let headerId= document.getElementById("header");
+      mainId.style.display ="none";
+     headerId.style.color="blue"
+     headerId.style.backgroundColor="black"
+     confirmId.style.display="block";
+      
+    //   document.body.style.color="black"
+   
+getDetails();
+    
+  })
+
+ function getDetails(){
+    const departureDate =document.getElementById("departure-date").value;
+   const showDeparture=document.getElementById("departure");
+     showDeparture.innerText=   departureDate;
+  const returnDate =document.getElementById("return-date").value;
+   const showReturn=document.getElementById("return");
+     showReturn.innerText=   returnDate;
+
+ }
+
+
+
 
 // function getInputValue(id,isIncrease){
 //     const inputValue=document.getElementById(id);
