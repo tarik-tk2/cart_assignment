@@ -1,4 +1,81 @@
 
+
+
+
+function grandTotal(subtotal,vat){
+const totalGrand=subtotal+vat;
+document.getElementById("grand-total").innerText="$"+totalGrand;
+console.log(totalGrand);
+
+}
+  function vatCount(subTotal){
+       const vat=subTotal*.10;
+       document.getElementById('vat-count').innerText="$"+vat;
+       console.log(vat);
+       return vat;
+  }
+ function subTotal(whichCase,caseCount,newCaseCount){
+     let caseTotal=caseCount;
+     let ecoCaseTotal=newCaseCount;
+     if(whichCase==true){
+     caseTotal=caseCount*150;
+     ecoCaseTotal=newCaseCount*100; 
+     }
+     if(whichCase==false){
+     caseTotal=caseCount*100;
+     ecoCaseTotal=newCaseCount*150;
+    
+     }
+     const  subTotal= document.getElementById('sub-total');
+     const  totalSubTotal=ecoCaseTotal+caseTotal
+     subTotal.innerText='$'+totalSubTotal;
+    return totalSubTotal;
+ }
+
+ function caseClick( isIncrease){
+    const caseInput= document.getElementById('first-class-input');
+    const caseCount= parseInt(caseInput.value);
+    const ecoCaseInput=document.getElementById("economy-class-input").value;
+    let ecoCaseNewCount=parseInt(ecoCaseInput);
+    let caseNewCount=caseCount
+
+ if(isIncrease==true){
+    caseNewCount= caseCount+1;
+    caseInput.value=caseNewCount;
+
+    }
+    if(isIncrease==false){
+     if(caseCount>0){
+     caseNewCount= caseCount-1;
+    caseInput.value=caseNewCount;
+     }}
+  const subTotalCost= subTotal(true,caseNewCount,ecoCaseNewCount)
+  const vat =vatCount(subTotalCost);
+  grandTotal(subTotalCost,vat);
+ }
+  function economyCaseClick( isIncrease){
+    const caseInput= document.getElementById('economy-class-input');
+    const caseCount= parseInt(caseInput.value);
+    const firstCaseInput=document.getElementById("first-class-input").value;
+    let firstCaseNewCount=parseInt(firstCaseInput);
+    let caseNewCount=caseCount
+
+ if(isIncrease==true){
+    caseNewCount= caseCount+1;
+    caseInput.value=caseNewCount;
+
+    }
+    if(isIncrease==false){
+     if(caseCount>0){
+     caseNewCount= caseCount-1;
+    caseInput.value=caseNewCount;
+     }}
+      const subTotalCost= subTotal(false,caseNewCount,firstCaseNewCount)
+      const vat=vatCount(subTotalCost);
+       grandTotal(subTotalCost,vat)
+ 
+ }
+
 // function getInputValue(id,isIncrease){
 //     const inputValue=document.getElementById(id);
 //     const numberParsing=parseInt(inputValue.value);
@@ -118,73 +195,70 @@
 
 
 
+// document.getElementById("first-class-increase").addEventListener('click',function(){
+//     const caseInput= document.getElementById('first-class-input');
+//     const caseCount= parseInt(caseInput.value);
+//     const ecoCaseInput=document.getElementById("economy-class-input").value;
+//     const ecoCaseNewCount=parseInt(ecoCaseInput);
+//     const caseNewCount= caseCount+1;
+//     caseInput.value=caseNewCount;
+//     const ecoCaseTotal=ecoCaseNewCount*100;
+//     const caseTotal=caseNewCount*150;
+//     const  subTotal= document.getElementById('sub-total');
+//     const  totalSubTotal=ecoCaseTotal+caseTotal
+//     subTotal.innerText='$'+totalSubTotal;
 
-document.getElementById("first-class-increase").addEventListener('click',function(){
-    const caseInput= document.getElementById('first-class-input');
-    const caseCount= parseInt(caseInput.value);
-    const caseNewCount= caseCount+1;
-     const ecoCaseInput=document.getElementById("economy-class-input").value;
-     const ecoCaseNewCount=parseInt(ecoCaseInput);
+// })
+// document.getElementById('first-class-decrease').addEventListener('click',function(){
+//     const caseInput= document.getElementById("first-class-input");
+//     const caseCount= parseInt(caseInput.value);
+//     const ecoCaseInput=document.getElementById("economy-class-input").value;
+//     const ecoCaseNewCount=parseInt(ecoCaseInput);
+//     if(caseCount>0){
+//     const caseNewCount= caseCount-1;
+//     caseInput.value=caseNewCount
+//     const ecoCaseTotal=ecoCaseNewCount*100;
+//     const  caseTotal=caseNewCount*150;
+//     const subTotal= document.getElementById("sub-total");
+//     const  totalSubTotal=ecoCaseTotal+caseTotal
+//     subTotal.innerText='$'+totalSubTotal;
+//     }
+
+// })
+
+
+
+
+
+// document.getElementById("economy-class-increase").addEventListener('click',function(){
+//     const caseInput= document.getElementById('economy-class-input');
+//     const caseCount= parseInt(caseInput.value);
+//     const caseNewCount= caseCount+1;
+//      const firstCaseInput=document.getElementById("first-class-input").value;
+//      const firstCaseNewCount=parseInt(firstCaseInput);
     
-    caseInput.value=caseNewCount;
-    const ecoCaseTotal=ecoCaseNewCount*100;
-    const caseTotal=caseNewCount*150;
-    //console.log(caseNewCount);
-   const  subTotal= document.getElementById('sub-total');
-  const  totalSubTotal=ecoCaseTotal+caseTotal
-   subTotal.innerText='$'+totalSubTotal;
+//     caseInput.value=caseNewCount;
+//     const caseTotal=caseNewCount*100;
+//     const firstClassTotal=firstCaseNewCount*150;
+//     //console.log(caseNewCount);
+//    const  subTotal= document.getElementById('sub-total');
+//   const  totalSubTotal=firstClassTotal+caseTotal
+//    subTotal.innerText='$'+totalSubTotal;
 
-})
-document.getElementById('first-class-decrease').addEventListener('click',function(){
-    const caseInput= document.getElementById("first-class-input");
-    const caseCount= parseInt(caseInput.value);
-     const ecoCaseInput=document.getElementById("economy-class-input").value;
-     const ecoCaseNewCount=parseInt(ecoCaseInput);
-    if(caseCount>0){
-     const caseNewCount= caseCount-1;
-      caseInput.value=caseNewCount
-      const ecoCaseTotal=ecoCaseNewCount*100;
-     const  caseTotal=caseNewCount*150;
-     const subTotal= document.getElementById("sub-total");
-      const  totalSubTotal=ecoCaseTotal+caseTotal
-   subTotal.innerText='$'+totalSubTotal;
-    }
+// })
+// document.getElementById('economy-class-decrease').addEventListener('click',function(){
+//     const caseInput= document.getElementById("economy-class-input");
+//     const caseCount= parseInt(caseInput.value);
+//      const firstCaseInput=document.getElementById("first-class-input").value;
+//      const firstCaseNewCount=parseInt(firstCaseInput);
+//     if(caseCount>0){
+//      const caseNewCount= caseCount-1;
+//       caseInput.value=caseNewCount
+//       const caseTotal=caseNewCount*100;
+//      const  firstClassTotal=firstCaseNewCount*150;
+//      const subTotal= document.getElementById("sub-total");
+//       const  totalSubTotal=caseTotal+firstClassTotal
+//    subTotal.innerText='$'+totalSubTotal;
+//     }
 
-})
-
-
-
-
-
-document.getElementById("economy-class-increase").addEventListener('click',function(){
-    const caseInput= document.getElementById('economy-class-input');
-    const caseCount= parseInt(caseInput.value);
-    const caseNewCount= caseCount+1;
-     const firstCaseInput=document.getElementById("first-class-input").value;
-     const firstCaseNewCount=parseInt(firstCaseInput);
-    
-    caseInput.value=caseNewCount;
-    const caseTotal=caseNewCount*100;
-    const firstClassTotal=firstCaseNewCount*150;
-    //console.log(caseNewCount);
-   const  subTotal= document.getElementById('sub-total');
-  const  totalSubTotal=firstClassTotal+caseTotal
-   subTotal.innerText='$'+totalSubTotal;
-
-})
-document.getElementById('economy-class-decrease').addEventListener('click',function(){
-    const caseInput= document.getElementById("economy-class-input");
-    const caseCount= parseInt(caseInput.value);
-     const firstCaseInput=document.getElementById("first-class-input").value;
-     const firstCaseNewCount=parseInt(firstCaseInput);
-    if(caseCount>0){
-     const caseNewCount= caseCount-1;
-      caseInput.value=caseNewCount
-      const caseTotal=caseNewCount*100;
-     const  firstClassTotal=firstCaseNewCount*150;
-     const subTotal= document.getElementById("sub-total");
-      const  totalSubTotal=caseTotal+firstClassTotal
-   subTotal.innerText='$'+totalSubTotal;
-    }
-
-})
+// })

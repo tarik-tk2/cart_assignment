@@ -68,8 +68,8 @@
                     <input id="first-class-input" class="inp-style inp-width" type="number" name="" value="1">
                 </div>
                 <div class="plus-minus-btn">
-                     <button id="first-class-increase" ><i class="fas fa-plus"></i></button>
-                     <button id="first-class-decrease" ><i class="fas fa-minus"></i></button>
+                     <button onclick="caseClick(true)" ><i class="fas fa-plus"></i></button>
+                     <button onclick="caseClick(false)" ><i class="fas fa-minus"></i></button>
                 </div>
             </div>
                 <div class="input-group f-class">
@@ -78,8 +78,8 @@
                         <input id="economy-class-input" class="inp-style inp-width" type="number" name="" value="1">
                     </div>
                     <div class="plus-minus-btn">
-                     <button id="economy-class-increase"><i class="fas fa-plus"></i></button>
-                     <button id="economy-class-decrease"><i class="fas fa-minus"></i></button>
+                     <button onclick="economyCaseClick(true)"><i class="fas fa-plus"></i></button>
+                     <button onclick="economyCaseClick(false)"><i class="fas fa-minus"></i></button>
                     </div>
                 </div>
 
@@ -99,7 +99,7 @@
                         <p>Charge 10% VAT</p>
                     </div>
                     <div class="right">
-                        <p>$50</p>
+                        <p id="vat-count">$00</p>
                     </div>
                 </div>
                 <hr>
@@ -108,7 +108,7 @@
                         <h4>Total</h4>
                     </div>
                     <div class="right">
-                        <p>$550</p>
+                        <p id="grand-total">$00</p>
                     </div>
                 </div>
             </div>
