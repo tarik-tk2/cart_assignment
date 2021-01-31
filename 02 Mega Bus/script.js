@@ -1,4 +1,4 @@
-
+/// parsing input value
 function paringInputValue(selectedId){
      const getInput=document.getElementById(selectedId);
      const paringInput=parseInt(getInput.value);
