@@ -7,6 +7,7 @@
     <title>Bus Ticket</title>
     <!-- Fonts -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap"
@@ -65,21 +66,21 @@
                 <div class="input-group f-class">
                 <div>
                     <label for="">First Class ($150)</label>
-                    <input id="first-class-input" class="inp-style inp-width" type="number" name="" value="1">
+                    <input id="first-class-input" class="inp-style inp-width" type="number" name="" value="0">
                 </div>
                 <div class="plus-minus-btn">
-                     <button onclick="caseClick(true)" ><i class="fas fa-plus"></i></button>
-                     <button onclick="caseClick(false)" ><i class="fas fa-minus"></i></button>
+                     <button onclick="firstClassInput(true)" ><i class="fas fa-plus"></i></button>
+                     <button onclick="firstClassInput(false)" ><i class="fas fa-minus"></i></button>
                 </div>
             </div>
                 <div class="input-group f-class">
                     <div>
                         <label for="">Economy ($100)</label>
-                        <input id="economy-class-input" class="inp-style inp-width" type="number" name="" value="1">
+                        <input id="economy-class-input" class="inp-style inp-width" type="number" name="" value="0">
                     </div>
                     <div class="plus-minus-btn">
-                     <button onclick="economyCaseClick(true)"><i class="fas fa-plus"></i></button>
-                     <button onclick="economyCaseClick(false)"><i class="fas fa-minus"></i></button>
+                     <button onclick="economyClassInput(true)"><i class="fas fa-plus"></i></button>
+                     <button onclick="economyClassInput(false)"><i class="fas fa-minus"></i></button>
                     </div>
                 </div>
 
@@ -122,16 +123,18 @@
 
 <section id="confirm-section">
     <div>
+         <i id="icon" class="fas fa-check-circle"></i>
         <h1>Congratulation</h1>
           <h4>You are Successfully Book  <span>Dhaka</span> to <span>Chittagong</span></h4>
-                 <h3>Details</h3>
-           <h3>Departure Date: <span id="departure">12/1222</span></h3>
-           <h3>Return Date: <span id=return>12/1222</span></h3>
-            <h3>First Class Seat's Book :<span id="first-class-seat">2</span> </h3>
-            <h3>Economy Class set's Bok  :<span' id="economy-class-set">2</span> </h3>
-            <h3>Subtotal: <span id="show-subtotal">$120</span> </h3>
-            <h3>Vat: <span id="show-vat">$120</span> </h3>
-            <h3>Total: <span id="show-total">$120</span> </h3>
+                 <h2>Details</h2>
+           <h3>Departure Date: <span id="departure"></span></h3>
+           <h3>Return Date: <span id=return></span></h3>
+            <h3>First Class Seat's Book :<span id="first-class-seat">00</span> </h3>
+            <h3>Economy Class set's Bok  :<span' id="economy-class-set">00</span> </h3>
+           <p>................................................................</p> 
+            <h3>Subtotal: <span id="show-subtotal">$00</span> </h3>
+            <h3>Vat: <span id="show-vat">$00</span> </h3>
+            <h3>Total: <span id="show-total">$00</span> </h3>
              <h4>Thank You  have a nice trip!!!</h4>
     </div>
 </section>
